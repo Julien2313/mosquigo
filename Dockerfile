@@ -11,6 +11,8 @@ RUN go get -u golang.org/x/lint/golint
 RUN go list -f {{.Target}} golang.org/x/lint/golint
 
 RUN GOLINTPATH=$(go list -f {{.Target}} golang.org/x/lint/golint)
+ENV GOLINTER=$GOLINTPATH
+RUN echo $GOLINTER
 
 RUN set http_proxy=http://172.17.0.1:6865
 RUN set https_proxy=http://172.17.0.1:6865
