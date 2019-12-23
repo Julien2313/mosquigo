@@ -5,6 +5,7 @@ RUN apt-get install -y apt-transport-https ca-certificates
 
 RUN wget http://repo.mosquitto.org/debian/mosquitto-stretch.list
 RUN apt-get install -y mosquitto
+RUN apt-get install -y mosquitto-clients
 
 RUN go get -u golang.org/x/lint/golint
 
